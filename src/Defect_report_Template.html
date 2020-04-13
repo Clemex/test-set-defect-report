@@ -1,0 +1,19 @@
+<head></head>
+<body>
+	<h3>Defect Report for Test Set: {{ Test_Set }}</h3>
+	<h3>Build Version: {{ Build_Version }}</h3>
+    <table>
+        <tr>
+            {% for column in Header %}
+            <th>{{ column }}</th>
+            {% endfor %}
+        </tr>
+        {% for row in df.keys() %}
+        <tr>
+			{% for colvalue in df.get(row,columndata) %}
+            <td>{{ colvalue}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</body>
